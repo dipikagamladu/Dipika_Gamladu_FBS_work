@@ -1,0 +1,20 @@
+#Accept no. of passengers from user and per ticket cost. Then accept age of each
+#passenger and then calculate total amount to ticket to travel for all of them based on following condition:
+#a. Children below 12=30% discount
+#b. Senior citizen (above 59)=50% discount
+#c. Others need to pay full.
+
+num_passengers=int(input('Enter number of passengers:'))
+ticket_cost=int(input('Enter per ticket cost:'))
+total_amount=0
+for i in range(num_passengers):
+    age=int(input(f'Enter age of passenger {i+1}:'))
+    if age < 12:
+        price=ticket_cost-(ticket_cost*30/100)
+    elif age<59:
+        price=ticket_cost-(ticket_cost*50/100)
+    else:
+        price=ticket_cost
+    print(f'passenger {i+1} price:{price}')
+    total_amount=total_amount+price
+print('/nTotal amount for all passengers:',total_amount)               
